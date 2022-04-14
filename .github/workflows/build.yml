@@ -9,7 +9,7 @@ on:
 # permissions:
 #   id-token: write
 
-permissions: read-all|write-all
+permissions: "read-all|write-all"
 
 jobs:
   qa:
