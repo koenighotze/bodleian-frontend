@@ -62,15 +62,15 @@ jobs:
       - name: Testing
         run: npm t
 
-      - name: Uploading coverage
-        uses: codacy/codacy-coverage-reporter-action@v1
-        with:
-          api-token: ${{ secrets.CODACY_API_TOKEN }}
-          coverage-reports: ./coverage/lcov.info
-        env:
-          CODACY_PROJECT_NAME: "bodleian-frontend"
-          CODACY_ORGANIZATION_PROVIDER: "gh"
-          CODACY_USERNAME: "${{ github.repository_owner }}"
+      # - name: Uploading coverage
+      #   uses: codacy/codacy-coverage-reporter-action@v1
+      #   with:
+      #     api-token: ${{ secrets.CODACY_API_TOKEN }}
+      #     coverage-reports: ./coverage/lcov.info
+      #   env:
+      #     CODACY_PROJECT_NAME: "bodleian-frontend"
+      #     CODACY_ORGANIZATION_PROVIDER: "gh"
+      #     CODACY_USERNAME: "${{ github.repository_owner }}"
 
   build-container:
     needs:
