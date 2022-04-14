@@ -20,19 +20,17 @@ jobs:
 
     steps:
       - name: Checking out
-        uses: actions/checkout@v2
-
-      - name: Setting up GCP environment
-        uses: google-github-actions/setup-gcloud@v0.4.0
+        uses: actions/checkout@v3
+      - name: Authenticating
+        uses: google-github-actions/auth@v0.6.0
         with:
-          project_id: "${{ secrets.GCP_PROJECT_ID }}"
-          service_account_key: "${{ secrets.GCP_SA_KEY }}"
-          export_default_credentials: true
-
+          workload_identity_provider: ${{ secrets.WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: ${{ secrets.CICD_SA_EMAIL_ADDRESS }}
+      - name: Setting up GCP environment
+        uses: google-github-actions/setup-gcloud@v0.6.0
       - name: Containerizing
         id: containerizing
         run: ./scripts/containerize.sh
-
       - name: Scaning image
         uses: aquasecurity/trivy-action@0.2.1
         with:
@@ -42,7 +40,6 @@ jobs:
           ignore-unfixed: true
           vuln-type: 'os,library'
           severity: "MEDIUM,HIGH,CRITICAL"
-
       - name: Deploying to Cloud Run
         id: deploy
         uses: google-github-actions/deploy-cloudrun@v0.7.0
@@ -50,19 +47,17 @@ jobs:
           image: "${{ github.event.inputs.image-name || steps.containerizing.outputs.image-name }}"
           service: "bodleian-frontend"
           region: "europe-west1"
-
       - name: Check if service is up
         run: |
           gcloud run services describe bodleian-frontend --region europe-west1
           curl -H "Authorization: Bearer $(gcloud auth print-identity-token)" "${{ steps.deploy.outputs.url }}"
-
-      - name: Slack Notify
-        uses: rtCamp/action-slack-notify@v2.2.0
-        env:
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-          SLACK_USERNAME: Bodleian
-          SLACK_COLOR: "${{ job.status }}"
-          SLACK_TITLE: "Frontend Deployment"
-          SLACK_MESSAGE: "${{ github.event.inputs.image-name || steps.containerizing.outputs.image-name }} was deployed. Check it at ${{ steps.deploy.outputs.url }}"
-          SLACK_FOOTER: "Best regards from Bodleian"
-          MSG_MINIMAL: actions url
+      # - name: Slack Notify
+      #   uses: rtCamp/action-slack-notify@v2.2.0
+      #   env:
+      #     SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+      #     SLACK_USERNAME: Bodleian
+      #     SLACK_COLOR: "${{ job.status }}"
+      #     SLACK_TITLE: "Frontend Deployment"
+      #     SLACK_MESSAGE: "${{ github.event.inputs.image-name || steps.containerizing.outputs.image-name }} was deployed. Check it at ${{ steps.deploy.outputs.url }}"
+      #     SLACK_FOOTER: "Best regards from Bodleian"
+      #     MSG_MINIMAL: actions url
