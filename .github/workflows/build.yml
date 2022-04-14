@@ -1,0 +1,104 @@
+name: Build main or features
+
+on:
+  push:
+    branches:
+      - main
+      - 'feature/*'
+  workflow_dispatch:
+
+jobs:
+  qa:
+    runs-on: ubuntu-20.04
+
+    steps:
+      - name: Checking out
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2.5.1
+        with:
+          node-version: '14.x'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Scaning code
+        uses: aquasecurity/trivy-action@0.2.0
+        with:
+          scan-type: "fs"
+          ignore-unfixed: true
+          format: "table"
+          template: "@/contrib/sarif.tpl"
+          severity: "MEDIUM,HIGH,CRITICAL"
+
+      - name: Linting
+        run: npm run lint
+
+      - name: Detecting secrets
+        uses: reviewdog/action-detect-secrets@v0.7
+        with:
+          reporter: github-check
+          github_token: ${{ secrets.github_token }}
+          fail_on_error: true
+          detect_secrets_flags: --exclude-files .git
+
+  test:
+    runs-on: ubuntu-20.04
+
+    steps:
+      - name: Checking out
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2.5.1
+        with:
+          node-version: '14.x'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Testing
+        run: npm t
+
+      - name: Uploading coverage
+        uses: codacy/codacy-coverage-reporter-action@v1
+        with:
+          api-token: ${{ secrets.CODACY_API_TOKEN }}
+          coverage-reports: ./coverage/lcov.info
+        env:
+          CODACY_PROJECT_NAME: "bodleian-frontend"
+          CODACY_ORGANIZATION_PROVIDER: "gh"
+          CODACY_USERNAME: "${{ github.repository_owner }}"
+
+  build-container:
+    needs:
+      - qa
+      - test
+    runs-on: ubuntu-20.04
+
+    steps:
+      - name: Checking out
+        uses: actions/checkout@v2
+
+      - name: Setting up GCP environment
+        uses: google-github-actions/setup-gcloud@v0.4.0
+        with:
+          project_id: "${{ secrets.GCP_PROJECT_ID }}"
+          service_account_key: "${{ secrets.GCP_SA_KEY }}"
+          export_default_credentials: true
+
+      - name: Containerizing
+        id: containerizing
+        run: ./scripts/containerize.sh
+
+      - name: Scaning image tar
+        uses: aquasecurity/trivy-action@0.2.1
+        with:
+          image-ref: "${{ github.event.inputs.image-name || steps.containerizing.outputs.image-name }}"
+          format: "table"
+          exit-code: "1"
+          ignore-unfixed: true
+          severity: "MEDIUM,HIGH,CRITICAL"
+          vuln-type: "os,library"
