@@ -20,26 +20,13 @@ fi
 
 echo "::group:: Building image ${IMAGE_NAME}"
 
-JIB_OPTIONS="-Djib.container.labels=$CONTAINER_LABELS
-    -Djib.to.image=$IMAGE_NAME
-    -Djib.container.ports=$CONTAINER_PORTS
-    -Djib.credHelper=gcr"
-
-if [[ -n "${GIT_TAG:=}" ]]; then
-    JIB_OPTIONS="$JIB_OPTIONS -Djib.to.tags=$GIT_TAG"
-fi
-
-mvn -B -q clean compile
-
 if [[ "$GITHUB_REF" = refs/tags/* ]]; then
-  # shellcheck disable=SC2086
-  mvn -B -q jib:build $JIB_OPTIONS
+  docker build -t "$IMAGE_NAME" .
+  # TODO Docker push
   echo "::set-output name=image-name::$CONTAINER_REGISTRY/$GITHUB_REPOSITORY:$GIT_TAG"
 else
   echo "Not running on tag, only building a tar and not pushing"
-
-  # shellcheck disable=SC2086
-  mvn -B -q jib:buildTar $JIB_OPTIONS
+  docker build -t "$IMAGE_NAME" .
 fi
 
 echo "::endgroup::"
