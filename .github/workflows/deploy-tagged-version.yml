@@ -33,7 +33,7 @@ jobs:
         id: containerizing
         run: ./scripts/containerize.sh
       - name: Scaning image
-        uses: aquasecurity/trivy-action@0.2.4
+        uses: aquasecurity/trivy-action@0.6.0
         with:
           image-ref: "${{ github.event.inputs.image-name || steps.containerizing.outputs.image-name }}"
           format: "table"
