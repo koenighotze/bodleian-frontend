@@ -23,7 +23,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Scaning code
-        uses: aquasecurity/trivy-action@0.2.4
+        uses: aquasecurity/trivy-action@0.6.2
         with:
           scan-type: "fs"
           ignore-unfixed: true
@@ -90,7 +90,7 @@ jobs:
           CONTAINER_REGISTRY: ${{ secrets.CONTAINER_REGISTRY }}
           GCP_PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
       - name: Scaning image tar
-        uses: aquasecurity/trivy-action@0.2.4
+        uses: aquasecurity/trivy-action@0.6.2
         with:
           image-ref: "${{ github.event.inputs.image-name || steps.containerizing.outputs.image-name }}"
           format: "table"
