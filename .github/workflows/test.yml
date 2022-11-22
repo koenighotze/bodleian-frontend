@@ -1,0 +1,35 @@
+name: Flow test
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  CONTAINER_REGISTRY: ${{ secrets.CONTAINER_REGISTRY }}
+  GCP_PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
+
+jobs:
+  testing-with-main-app-audience:
+    permissions:
+      id-token: write
+      contents: read
+
+    runs-on: ubuntu-20.04
+
+    steps:
+      - name: Checking out
+        uses: actions/checkout@v3
+      - name: Authenticating
+        id: auth
+        uses: google-github-actions/auth@v1
+        with:
+          workload_identity_provider: projects/642340482178/locations/global/workloadIdentityPools/github-cicd-pool/providers/github-provider
+          service_account: bodleian-frontend-cicd@bodleian-398addce.iam.gserviceaccount.com
+          token_format: id_token
+          id_token_audience: https://frontend-83496-btesdmljxq-ey.a.run.app
+          id_token_include_email: true
+      - run: |
+          curl https://frontend-83496-btesdmljxq-ey.a.run.app \
+          --header "Authorization: Bearer ${{ steps.auth.outputs.id_token }}"
