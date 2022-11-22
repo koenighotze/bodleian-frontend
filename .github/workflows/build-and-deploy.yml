@@ -98,7 +98,7 @@ jobs:
           workload_identity_provider: ${{ secrets.WORKLOAD_IDENTITY_PROVIDER }}
           service_account: ${{ secrets.CICD_SA_EMAIL_ADDRESS }}
           token_format: id_token
-          id_token_audience: ${{ secrets.CLOUD_RUN_BACKEND_URL }}
+          id_token_audience: ${{ secrets.CLOUD_RUN_FRONTEND_URL }}
           id_token_include_email: true
       - name: Set up GCP environment
         uses: google-github-actions/setup-gcloud@v1
