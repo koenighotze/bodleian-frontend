@@ -1,4 +1,12 @@
-# bodleian-frontend
+# Bodleian Frontend
+
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com)
+
+
+## TODO
+
+[ ] Cloud Run deploy
+[ ] Firebase deploy
 
 ## Project setup
 ```
