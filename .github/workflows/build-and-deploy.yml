@@ -42,8 +42,10 @@ jobs:
         with:
           node-version: 16
       - run: npm ci
-      - name: Lint
+      - name: Lint code
         run: npm run lint
+      - name: Lint markdown
+        run: npm run lint-md
       - name: Check Dockerfile
         uses: hadolint/hadolint-action@v3.0.0
         with:
