@@ -1,26 +1,36 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <main>
+    <BodleianPage />
+  </main>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import BodleianPage from './components/BodleianPage.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    BodleianPage
   }
 }
 </script>
 
 <style>
+
+body {
+  background-color: silver;
+  background-attachment: fixed;
+}
+
+main {
+  padding: 1em;
+  background-color: white;
+  margin: 0 auto;
+  max-width: 1024px;
+  min-height: 300px;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
