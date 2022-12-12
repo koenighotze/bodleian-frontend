@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import BodleianPage from './components/BodleianPage.vue'
+import BodleianPage from './home/BodleianPage.vue'
 
 export default {
   name: 'App',
