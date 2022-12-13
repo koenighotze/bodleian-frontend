@@ -1,63 +1,70 @@
 {
   "name": "bodleian-frontend",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.1.1",
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.4.3",
+    "react-scripts": "5.0.1",
+    "react-transition-group": "^4.4.5",
+    "uuid": "^9.0.0",
+    "web-vitals": "^2.1.4"
+  },
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "test": "echo kommt noch,",
+    "tailwind-css": "tailwind build -i src/tailwind.src.css -c tailwind.js -o public/tailwind.css",
+    "start": "concurrently \"npm:watch-*\"",
+    "watch-app": "react-scripts start",
+    "watch-test": "react-scripts test",
+    "watch-css": "npm run tailwind-css -- --watch",
+    "build": "npm run tailwind:css && react-scripts build",
+    "eject": "react-scripts eject",
+    "test": "react-scripts test --watchAll=false --coverage",
+    "test-watch": "react-scripts test",
     "format": "prettier --check ./src",
-    "format.fix": "prettier --write ./src",
-    "eslint": "eslint ./src",
-    "eslint-fix": "eslint --fix ./src",
+    "format-fix": "prettier --write ./src",
+    "lint": "eslint ./src",
+    "lint-fix": "eslint --fix ./src",
     "lint-md": "remark .",
     "lint-style": "stylelint src/**/*.css",
     "lint-style-fix": "stylelint --fix src/**/*.css"
   },
-  "dependencies": {
-    "core-js": "^3.8.3",
-    "vue": "^3.2.13"
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   },
   "devDependencies": {
-    "@babel/core": "^7.20.5",
-    "@babel/eslint-parser": "^7.12.16",
-    "@vue/cli-plugin-babel": "~5.0.0",
-    "@vue/cli-plugin-eslint": "~5.0.0",
-    "@vue/cli-service": "~5.0.0",
-    "eslint": "^8.28.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-config-standard": "^17.0.0",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-jest": "^27.1.6",
-    "eslint-plugin-n": "^15.6.0",
-    "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-promise": "^6.1.1",
-    "eslint-plugin-vue": "^9.8.0",
-    "remark-cli": "^11.0.0",
+    "concurrently": "^7.6.0",
+    "eslint": "^8.7.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-functional": "^4.1.1",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jest": "^25.7.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "prettier": "^2.5.1",
+    "remark-cli": "^10.0.1",
     "remark-preset-lint-recommended": "^6.1.2",
-    "stylelint": "^14.16.0",
-    "stylelint-config-standard": "^29.0.0"
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/vue3-essential",
-      "eslint:recommended"
-    ],
-    "parserOptions": {
-      "parser": "@babel/eslint-parser"
-    },
-    "rules": {}
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead",
-    "not ie 11"
-  ]
+    "stylelint": "^14.2.0",
+    "stylelint-config-standard": "^24.0.0",
+    "tailwindcss": "^3.2.4"
+  }
 }
