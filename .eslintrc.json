@@ -9,7 +9,9 @@
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:prettier/recommended",
-    "plugin:import/recommended"
+    "plugin:import/recommended",
+    "plugin:jsx-a11y/recommended",
+    "eslint-config-prettier"
   ],
   "parserOptions": {
     "ecmaFeatures": {
@@ -17,6 +19,19 @@
     },
     "ecmaVersion": 12,
     "sourceType": "module"
+  },
+  "settings": {
+    "react": {
+      // Tells eslint-plugin-react to automatically detect the version of React to use.
+      "version": "detect"
+    },
+    // Tells eslint how to resolve imports
+    "import/resolver": {
+      "node": {
+        "paths": ["src"],
+        "extensions": [".js", ".jsx"]
+      }
+    }
   },
   "plugins": ["react", "jest", "react-hooks", "prettier"],
   "rules": {

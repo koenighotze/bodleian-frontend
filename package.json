@@ -15,12 +15,15 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "start": "vite",
+    "build": "vite build",
+    "serve": "vite preview",
     "tailwind-css": "tailwind build -i src/tailwind.src.css -c tailwind.js -o public/tailwind.css",
-    "start": "concurrently \"npm:watch-*\"",
+    "ostart": "concurrently \"npm:watch-*\"",
     "watch-app": "react-scripts start",
     "watch-test": "react-scripts test",
     "watch-css": "npm run tailwind-css -- --watch",
-    "build": "npm run tailwind:css && react-scripts build",
+    "obuild": "npm run tailwind:css && react-scripts build",
     "eject": "react-scripts eject",
     "test": "react-scripts test --watchAll=false --coverage",
     "test-watch": "react-scripts test",
@@ -51,12 +54,14 @@
     ]
   },
   "devDependencies": {
+    "@vitejs/plugin-react": "^3.0.0",
     "concurrently": "^7.6.0",
     "eslint": "^8.7.0",
-    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-functional": "^4.1.1",
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-jest": "^25.7.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
@@ -65,6 +70,9 @@
     "remark-preset-lint-recommended": "^6.1.2",
     "stylelint": "^14.2.0",
     "stylelint-config-standard": "^24.0.0",
-    "tailwindcss": "^3.2.4"
+    "tailwindcss": "^3.2.4",
+    "vite": "^4.0.1",
+    "vite-plugin-svgr": "^2.4.0",
+    "vite-tsconfig-paths": "^4.0.2"
   }
 }
