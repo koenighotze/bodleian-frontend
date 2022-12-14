@@ -1,3 +1,3 @@
-const navBar = () => <div>NabBar</div>
+const navBar = () => <div></div>
 
 export default navBar

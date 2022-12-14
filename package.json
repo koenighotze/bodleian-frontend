@@ -2,6 +2,10 @@
   "name": "bodleian-frontend",
   "version": "0.1.1",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.2.1",
+    "@fortawesome/free-regular-svg-icons": "^6.2.1",
+    "@fortawesome/free-solid-svg-icons": "^6.2.1",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -19,7 +23,6 @@
     "build": "vite build",
     "serve": "vite preview",
     "tailwind-css": "tailwind build -i src/tailwind.src.css -c tailwind.js -o public/tailwind.css",
-    "ostart": "concurrently \"npm:watch-*\"",
     "watch-app": "react-scripts start",
     "watch-test": "react-scripts test",
     "watch-css": "npm run tailwind-css -- --watch",
@@ -55,6 +58,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^3.0.0",
+    "babel-plugin-macros": "^3.1.0",
     "concurrently": "^7.6.0",
     "eslint": "^8.7.0",
     "eslint-config-prettier": "^8.5.0",
