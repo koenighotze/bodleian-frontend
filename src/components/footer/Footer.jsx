@@ -1,4 +1,4 @@
-import './Footer2.css'
+import './Footer.css'
 
 const Footer = () => (
   <footer className="page-footer">
