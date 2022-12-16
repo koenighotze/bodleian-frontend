@@ -1,3 +1,4 @@
+import './BookItem.css'
 import PropTypes from 'prop-types'
 
 const BookItem = ({ book }) => {

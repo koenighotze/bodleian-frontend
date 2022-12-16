@@ -1,5 +1,6 @@
 import BookItem from './BookItem'
 import books from './book-data'
+import './BookTable.css'
 
 const BookTable = () => {
   return (

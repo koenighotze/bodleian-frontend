@@ -1,11 +1,5 @@
-import BookTable from '../components/books/BookTable'
-
 const homePage = () => {
-  return (
-    <div>
-      <BookTable />
-    </div>
-  )
+  return <div>Welcome to Bodleian</div>
 }
 
 export default homePage
