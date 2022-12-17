@@ -1,30 +1,29 @@
 import './NavBar.css'
+import { Link } from 'react-router-dom'
+import CustomNavItem from './CustomNavItem'
 
-const navBar = () => (
+const NavBar = () => (
   <header className="nav-wrapper">
     <nav className="nav">
       <div className="nav-block left">
-        <a href="/" className="nav-link active skew">
+        <Link to={'/'} className="nav-link active skew">
           <span className="home-link-span">
             <span className="u-nav un-skew">
               <i className="fa-solid fa-book"></i>
               {} Bodleian - Digital Library
             </span>
           </span>
-        </a>
+        </Link>
       </div>
       <div className="nav-block right">
-        <a href="/books" className="nav-link skew">
-          <span className="nav-link-span">
-            <span className="u-nav">Books</span>
-          </span>
-        </a>
-        <a href="/contact" className="nav-link skew">
-          <span className="nav-link-span">
-            <span className="u-nav">Contact</span>
-          </span>
-        </a>
-        <a href="https://github.com/koenighotze/bodleian-frontend" className="nav-link skew">
+        <CustomNavItem to="/books" name="Books" />
+        <CustomNavItem to="/contact" name="Contact" />
+        <a
+          href="https://github.com/koenighotze/bodleian-frontend"
+          className="nav-link skew"
+          target="_blank"
+          rel="noreferrer"
+        >
           <span className="nav-link-span">
             <span className="u-nav">
               <i className="fa-brands fa-github"></i>
@@ -37,4 +36,4 @@ const navBar = () => (
   </header>
 )
 
-export default navBar
+export default NavBar

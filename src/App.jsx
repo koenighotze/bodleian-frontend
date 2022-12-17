@@ -13,13 +13,16 @@ const App = () => {
       <>
         <Header />
         <main className="page-body">
-          <AuthenticationWrapper>
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/books" element={<BooksPage />} />
-              <Route path="/login" element={<LoginPage />} />
-            </Routes>
-          </AuthenticationWrapper>
+          <div className="page-content">
+            <AuthenticationWrapper>
+              <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/books" element={<BooksPage />} />
+                <Route path="/contact" element={<HomePage />} />
+                <Route path="/login" element={<LoginPage />} />
+              </Routes>
+            </AuthenticationWrapper>
+          </div>
         </main>
         <Footer />
       </>

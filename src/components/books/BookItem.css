@@ -1,10 +1,10 @@
 .book-item {
-  padding: 0.3em;
   background-color: white;
-  border: 1px dashed black;
-  width: fit-content;
   block-size: fit-content;
+  border: 1px dashed black;
   margin: 0.1em;
+  padding: 0.3em;
+  width: fit-content;
 }
 
 div.label-value-pair {
@@ -12,14 +12,14 @@ div.label-value-pair {
 }
 
 div.label-value-pair label span {
-  width: 8em;
   display: inline-block;
   font-size: smaller;
-  text-align: right;
   padding-right: 1em;
+  text-align: right;
+  width: 8em;
 }
 
 div.label-value-pair label input {
-  width: 20em;
   display: inline-block;
+  width: 20em;
 }

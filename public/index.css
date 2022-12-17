@@ -16,18 +16,18 @@
 html,
 body {
   box-sizing: border-box;
-  height: 100%;
-  padding: 0;
-  margin: 0;
-  font-size: small;
   font-family:
     Roboto,
     sans-serif;
+  font-size: small;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .wrapper {
   box-sizing: border-box;
-  min-height: 100%;
   display: flex;
   flex-direction: column;
+  min-height: 100%;
 }

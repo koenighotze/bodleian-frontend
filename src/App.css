@@ -1,3 +1,15 @@
 .page-body {
+  align-items: center;
+  background-color: blue;
+  display: flex;
   flex-grow: 1;
+  justify-content: center;
+  padding: 1em;
+}
+
+.page-content {
+  background-color: white;
+  margin: auto;
+  padding: 1em;
+  width: fit-content;
 }

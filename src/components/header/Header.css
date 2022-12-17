@@ -1,12 +1,12 @@
 .page-header {
+  background-color: white;
   color: white;
   flex-grow: 0;
   flex-shrink: 0;
-  background-color: white;
-  position: sticky;
-  width: 100%;
-  top: 0;
   font-family:
     "Saira Semi Condensed",
     sans-serif;
+  position: sticky;
+  top: 0;
+  width: 100%;
 }

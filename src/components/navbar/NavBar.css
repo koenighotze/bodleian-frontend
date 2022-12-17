@@ -1,32 +1,32 @@
 /* Navigation bar */
 .nav-wrapper {
+  left: 0;
+  margin: 0 auto;
   /* background-color: aqua; */
   overflow: hidden;
-  width: 100%;
-  margin: 0 auto;
   position: sticky;
-  left: 0;
+  width: 100%;
   z-index: 100;
 }
 
 .nav {
+  align-content: center;
+  align-items: center;
   /* @include shadow-box; */
   display: flex;
   flex-flow: row nowrap;
-  overflow: hidden;
-  font-size: x-small;
-  align-items: center;
-  align-content: center;
   font-family:
     "Saira Semi Condensed",
     sans-serif;
+  font-size: x-small;
+  overflow: hidden;
 }
 
 .nav-block {
   display: flex;
-  margin: 0.3em;
   flex-flow: row nowrap;
   flex-grow: 1;
+  margin: 0.3em;
 }
 
 .right {
@@ -43,11 +43,15 @@
 }
 
 .nav-link {
-  text-transform: uppercase;
-  text-align: center;
   background: linear-gradient(45deg, #57baf8, #7758ff);
   color: #fff;
-  text-decoration: none;
-  padding: 0.3em;
   margin: 0.1em;
+  padding: 0.3em;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.nav-item-active {
+  text-decoration: underline;
 }
