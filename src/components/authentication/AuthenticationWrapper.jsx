@@ -1,3 +1,3 @@
-const wrapper = ({ children }) => <div>{children} </div>
+const wrapper = ({ children }) => <div className="authentication-wrapper">{children} </div>
 
 export default wrapper

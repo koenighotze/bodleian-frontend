@@ -1,7 +1,25 @@
 div.book-table {
-  font-size: x-small;
+  /* border: solid green; */
+  display: flex;
+  flex-direction: column;
+  min-width: 30em;
+  width: fit-content;
 }
 
-span.data-header {
+div.table-header {
+  /* border: solid red; */
   font-size: larger;
+}
+
+/* div.table-content {
+  border: solid blue;
+} */
+
+input.search {
+  /* box-shadow: none; */
+  /* border: none; */
+  /* border-bottom: 1px solid black; */
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  /* box-shadow:0 0 15px 4px rgba(0,0,0,0.06); */
 }

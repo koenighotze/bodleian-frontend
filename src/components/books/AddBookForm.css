@@ -1,0 +1,23 @@
+div.add-book-form {
+  width: 100%;
+}
+
+div.add-book-form input[type="text"] {
+  border: none;
+  border-bottom: solid black 1px;
+  display: inline-block;
+  width: 20em;
+}
+
+div.tool button.discard {
+  background-color: white;
+  border: solid 1px;
+  border-color: #57baf8;
+  color: #57baf8;
+}
+
+div.tool button.discard:hover {
+  background-color: #7758ff;
+  color: white;
+  text-decoration: underline;
+}

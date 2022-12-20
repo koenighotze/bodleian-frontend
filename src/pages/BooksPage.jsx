@@ -1,14 +1,10 @@
 import BooksTable from '../components/books/BooksTable'
 import BooksTableState from '../context/books-table/BooksTableState'
 
-const booksPage = () => {
-  return (
-    <div>
-      <BooksTableState>
-        <BooksTable />
-      </BooksTableState>
-    </div>
-  )
-}
+const booksPage = () => (
+  <BooksTableState>
+    <BooksTable />
+  </BooksTableState>
+)
 
 export default booksPage

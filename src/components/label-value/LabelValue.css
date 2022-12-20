@@ -1,0 +1,18 @@
+div.label-value-pair {
+  font-size: x-small;
+  padding-bottom: 0.3em;
+  padding-top: 0.3em;
+}
+
+div.label-value-pair span.label {
+  display: inline-block;
+  font-weight: bold;
+  padding-right: 1em;
+  text-align: right;
+  width: 8em;
+}
+
+div.label-value-pair span.value {
+  display: inline-block;
+  width: 20em;
+}

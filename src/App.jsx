@@ -3,6 +3,7 @@ import AuthenticationWrapper from './components/authentication/AuthenticationWra
 import Footer from './components/footer/Footer'
 import Header from './components/header/Header'
 import BooksPage from './pages/BooksPage'
+import ContactPage from './pages/ContactPage'
 import HomePage from './pages/HomePage'
 import LoginPage from './pages/LoginPage'
 import './App.css'
@@ -10,22 +11,22 @@ import './App.css'
 const App = () => {
   return (
     <Router>
-      <>
-        <Header />
-        <main className="page-body">
+      <Header />
+      <main className="page-body">
+        <AuthenticationWrapper>
           <div className="page-content">
-            <AuthenticationWrapper>
+            <div className="page-content-inner">
               <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/books" element={<BooksPage />} />
-                <Route path="/contact" element={<HomePage />} />
+                <Route path="/contact" element={<ContactPage />} />
                 <Route path="/login" element={<LoginPage />} />
               </Routes>
-            </AuthenticationWrapper>
+            </div>
           </div>
-        </main>
-        <Footer />
-      </>
+        </AuthenticationWrapper>
+      </main>
+      <Footer />
     </Router>
   )
 }
