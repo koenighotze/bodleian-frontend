@@ -5,7 +5,7 @@ const sleep = (milliseconds) => new Promise((resolve) => setTimeout(resolve, mil
 
 let books = [...bookData]
 
-const randomSleep = () => sleep((Math.floor(Math.random() * 2) + 1) * 1000)
+const randomSleep = () => sleep((Math.floor(Math.random() * 4) + 1) * 500)
 
 const fetchAllBooks = async () => {
   await randomSleep()
