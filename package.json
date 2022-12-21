@@ -10,12 +10,14 @@
     "lint-css": "stylelint -f verbose '**/*.css'",
     "lint-fix": "eslint --fix ./src",
     "lint-md": "remark .",
+    "lint-md-fix": "remark . --output",
     "lint": "TIMING=1 eslint ./src",
     "serve": "vite preview",
     "start": "vite --cors",
     "test": "jest --watchAll=false --coverage --testMatch=**/*.unit.test.js",
     "test-watch": "jest --watchAll=true --testMatch=**/*.unit.test.js",
-    "turbo": "turbo build lint lint-css lint-md test format"
+    "turbo": "turbo build lint lint-css lint-md test format",
+    "turbo-clean": "npm run format-fix && turbo lint-fix lint-md-fix lint-css-fix"
   },
   "browserslist": {
     "production": [

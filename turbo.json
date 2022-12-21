@@ -16,6 +16,19 @@
     },
     "lint-md": {
       "inputs": ["**/*.md"]
+    },
+    "lint-fix": {
+      "outputs": []
+    },
+    "test-fix": {
+      "outputs": [],
+      "inputs": ["src/**/*.js"]
+    },
+    "lint-css-fix": {
+      "inputs": ["src/**/*.css"]
+    },
+    "lint-md-fix": {
+      "inputs": ["**/*.md"]
     }
   }
 }

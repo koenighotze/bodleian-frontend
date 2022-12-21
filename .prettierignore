@@ -1,6 +1,7 @@
 **/*css
-*.yaml
-*.yml
+**/*yaml
+**/*yml
+**/*md
 node_modules/
 build/
 dist/
