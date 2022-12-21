@@ -4,8 +4,8 @@
   "scripts": {
     "build": "vite build",
     "dev": "concurrently build test-watch",
-    "format-fix": "prettier --write ./src",
-    "format": "prettier --check ./src",
+    "format-fix": "prettier --write .",
+    "format": "prettier --check .",
     "lint-css-fix": "stylelint --fix '**/*.css'",
     "lint-css": "stylelint -f verbose '**/*.css'",
     "lint-fix": "eslint --fix ./src",
