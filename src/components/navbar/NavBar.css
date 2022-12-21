@@ -2,6 +2,7 @@
 .nav-wrapper {
   left: 0;
   margin: 0 auto;
+
   /* background-color: aqua; */
   overflow: hidden;
   position: sticky;
@@ -12,6 +13,7 @@
 .nav {
   align-content: center;
   align-items: center;
+
   /* @include shadow-box; */
   display: flex;
   flex-flow: row nowrap;

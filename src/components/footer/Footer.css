@@ -2,6 +2,7 @@
 footer.page-footer {
   align-content: center;
   align-items: center;
+
   /* background: linear-gradient(45deg, #57baf8, #7758ff); */
   background-color: white;
   bottom: 0;
@@ -17,6 +18,7 @@ footer.page-footer span {
   background: linear-gradient(45deg, #57baf8, #7758ff);
   color: #fff;
   display: flex;
+
   /* flex-grow: 1; */
   justify-content: space-around;
   margin: 0.1em;

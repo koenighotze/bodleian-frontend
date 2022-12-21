@@ -51,6 +51,7 @@ body {
 div.tool-bar {
   /* background-color: aquamarine;
   border: solid 1px yellow; */
+
   /* border-bottom: 1px solid black; */
   display: flex;
   justify-content: space-between;

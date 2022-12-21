@@ -1,5 +1,6 @@
 .page-body {
   align-items: center;
+
   /* background-color: blue; */
   flex-grow: 1;
   justify-content: center;
