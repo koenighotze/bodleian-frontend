@@ -11,26 +11,21 @@
 Cloud Run deploy
 Firebase deploy
 
-## Project setup
+## Quickstart
 
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-
-```
-npm run serve
+```bash
+$ npm ci
+...
+$ npm run dev
+...
 ```
 
-### Compiles and minifies for production
+## Scripts
 
-```
-npm run build
-```
-
-### Lints and fixes files
-
-```
-npm run lint
-```
+- build: create production package
+- dev: run dev environment and tests
+- format-fix: fix local format errors
+- lint-css-fix: fix local css errors
+- lint-fix: fix javascript lint errors
+- test: run tests with coverage
+- test-watch: run and watch tests

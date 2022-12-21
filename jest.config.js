@@ -5,7 +5,7 @@ module.exports = {
   resetMocks: true,
   resetModules: true,
   verbose: false,
-  collectCoverage: true,
+  collectCoverage: false,
   coverageReporters: ['lcov', 'text', 'text-summary'],
   collectCoverageFrom: ['src/**/*.js', '!src/**/*.test.js', '!**/*.integration.test.js'],
   coveragePathIgnorePatterns: ['/node_modules/'],

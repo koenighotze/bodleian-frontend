@@ -3,7 +3,7 @@
   "version": "0.1.1",
   "scripts": {
     "build": "vite build",
-    "dev": "concurrently build test-watch",
+    "dev": "turbo --no-cache start test-watch",
     "format-fix": "prettier --write .",
     "format": "prettier --check .",
     "lint-css-fix": "stylelint --fix '**/*.css'",
@@ -14,8 +14,8 @@
     "serve": "vite preview",
     "start": "vite --cors",
     "test": "jest --watchAll=false --coverage --testMatch=**/*.unit.test.js",
-    "test-watch": "echo todo",
-    "turbo": "npx turbo build lint lint-css lint-md test"
+    "test-watch": "jest --watchAll=true --testMatch=**/*.unit.test.js",
+    "turbo": "turbo build lint lint-css lint-md test format"
   },
   "browserslist": {
     "production": [
