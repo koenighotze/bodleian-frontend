@@ -7,6 +7,7 @@ import ContactPage from './pages/ContactPage'
 import HomePage from './pages/HomePage'
 import LoginPage from './pages/LoginPage'
 import './App.css'
+import './i18n'
 
 const App = () => {
   return (

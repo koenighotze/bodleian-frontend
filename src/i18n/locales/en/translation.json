@@ -1,0 +1,12 @@
+{
+  "NavBar.title": "Bodleian - Digital Library",
+  "NavBar.books": "Books",
+  "NavBar.contact": "Contact",
+  "NavBar.github": "GitHub",
+  "BookItem.id": "ID",
+  "BookItem.isbn": "ISBN",
+  "BookItem.title": "Title",
+  "BookItem.authors": "Authors",
+  "BookItem.remove-book": "Remove",
+  "BookItem.edit-book": "Edit"
+}

@@ -4,3 +4,32 @@
   margin: 0.1em;
   padding: 0.3em;
 }
+
+div.actions {
+  /* background-color: aquamarine;
+  border: solid 1px yellow; */
+
+  /* border-bottom: 1px solid black; */
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.3rem 1rem;
+}
+
+button.action {
+  background-color: #57baf8;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  font-size: xx-small;
+  margin-right: 0.3rem;
+  padding: 0.3rem;
+}
+
+button.action:hover {
+  background-color: #7758ff;
+  text-decoration: underline;
+}
+
+button.action i {
+  padding-right: 0.3em;
+}

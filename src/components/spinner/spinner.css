@@ -1,0 +1,15 @@
+div.spinner-container {
+  display: flex;
+  justify-content: space-around;
+  padding: 1em;
+}
+
+div.spinner {
+  align-items: center;
+  display: flex;
+}
+
+img.spinner {
+  max-width: 4em;
+  min-width: 1em;
+}
