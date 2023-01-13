@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import { withTranslation } from 'react-i18next'
 import './NavBar.css'
 import { Link } from 'react-router-dom'
-import config from '../../config'
+import config from '../../config.mjs'
 import CustomNavItem from './CustomNavItem'
 
 const NavBar = ({ t }) => {
