@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types'
 import { useRef } from 'react'
+import { withTranslation } from 'react-i18next'
 import { addNewBook } from '../../service/bookRepository'
 import './AddBookForm.css'
 
-const AddBookForm = ({ showForm }) => {
+const AddBookForm = ({ t, showForm }) => {
   const isbnRef = useRef()
   const titleRef = useRef()
   const authorsRef = useRef()
@@ -32,22 +33,22 @@ const AddBookForm = ({ showForm }) => {
     <div className="add-book-form">
       <form onSubmit={addBook}>
         <div className="label-value-pair">
-          <span className="label">ISBN:</span>
-          <input type="text" placeholder="1234567890" ref={isbnRef} />
+          <span className="label">{t('AddBookForm.isbn')}:</span>
+          <input type="text" placeholder={t('AddBookForm.isbn.placeholder')} ref={isbnRef} />
         </div>
         <div className="label-value-pair">
-          <span className="label">Title:</span>
-          <input type="text" placeholder="A great booktitle" ref={titleRef} />
+          <span className="label">{t('AddBookForm.title')}:</span>
+          <input type="text" placeholder={t('AddBookForm.title.placeholder')} ref={titleRef} />
         </div>
         <div className="label-value-pair">
-          <span className="label">Authors:</span>
-          <input type="text" placeholder="M. Author, P. Otherauthor" ref={authorsRef} />
+          <span className="label">{t('AddBookForm.authors')}:</span>
+          <input type="text" placeholder={t('AddBookForm.authors.placeholder')} ref={authorsRef} />
         </div>
         <div className="tool-bar">
           <div className="tool">
             <button type="submit" ref={addButtonRef}>
               <i className="fa-solid fa-floppy-disk"></i>
-              Add book to collection
+              {t('AddBookForm.addButton')}
             </button>
           </div>
           <div className="tool">
@@ -58,7 +59,7 @@ const AddBookForm = ({ showForm }) => {
               onClick={() => showForm(false)}
             >
               <i className="fa-solid fa-trash"></i>
-              Discard changes
+              {t('AddBookForm.cancelButton')}
             </button>
           </div>
         </div>
@@ -69,6 +70,7 @@ const AddBookForm = ({ showForm }) => {
 
 AddBookForm.propTypes = {
   showForm: PropTypes.func.isRequired,
+  t: PropTypes.func.isRequired,
 }
 
-export default AddBookForm
+export default withTranslation()(AddBookForm)

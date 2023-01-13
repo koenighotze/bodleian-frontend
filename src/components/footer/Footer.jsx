@@ -1,10 +1,11 @@
+import { withTranslation } from 'react-i18next'
 import './Footer.css'
 
-const Footer = () => (
+const Footer = ({ t }) => (
   <footer className="page-footer">
-    <span className="skew">Koenighotze</span>
-    <span className="skew">(c) 2022</span>
+    <span className="skew">{t('Footer.koenighotze')}</span>
+    <span className="skew">{t('Footer.copyright')}</span>
   </footer>
 )
 
-export default Footer
+export default withTranslation()(Footer)

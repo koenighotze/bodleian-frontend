@@ -1,7 +1,14 @@
-const homePage = () => (
+import PropTypes from 'prop-types'
+import { withTranslation } from 'react-i18next'
+
+const HomePage = ({ t }) => (
   <div>
-    <h1>Welcome to Bodleian</h1>
+    <h1>{t('HomePage.header')}</h1>
   </div>
 )
 
-export default homePage
+HomePage.propTypes = {
+  t: PropTypes.func.isRequired,
+}
+
+export default withTranslation()(HomePage)

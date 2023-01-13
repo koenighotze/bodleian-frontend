@@ -2,6 +2,7 @@ import PropTypes from 'prop-types'
 import { withTranslation } from 'react-i18next'
 import './NavBar.css'
 import { Link } from 'react-router-dom'
+import config from '../../config'
 import CustomNavItem from './CustomNavItem'
 
 const NavBar = ({ t }) => {
@@ -21,12 +22,7 @@ const NavBar = ({ t }) => {
         <div className="nav-block right">
           <CustomNavItem to="/books" name={t('NavBar.books')} />
           <CustomNavItem to="/contact" name={t('NavBar.contact')} />
-          <a
-            href="https://github.com/koenighotze/bodleian-frontend"
-            className="nav-link skew"
-            target="_blank"
-            rel="noreferrer"
-          >
+          <a href={config.ghRepository} className="nav-link skew" target="_blank" rel="noreferrer">
             <span className="nav-link-span">
               <span className="u-nav">
                 <i className="fa-brands fa-github"></i>

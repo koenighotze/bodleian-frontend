@@ -8,5 +8,19 @@
   "BookItem.title": "Title",
   "BookItem.authors": "Authors",
   "BookItem.remove-book": "Remove",
-  "BookItem.edit-book": "Edit"
+  "BookItem.edit-book": "Edit",
+  "Footer.copyright": "(c) 2023",
+  "Footer.koenighotze": "Koenighotze",
+  "ContactPage.header": "Contact",
+  "HomePage.header": "Welcome to Bodleian",
+  "LoginPage.login": "Login",
+  "AddBookForm.id": "ID",
+  "AddBookForm.isbn": "ISBN",
+  "AddBookForm.title": "Title",
+  "AddBookForm.authors": "Authors",
+  "AddBookForm.isbn.placeholder": "12314414224",
+  "AddBookForm.title.placeholder": "A great title",
+  "AddBookForm.authors.placeholder": "Some, Names",
+  "AddBookForm.cancelButton": "Discard changes",
+  "AddBookForm.addButton": "Add button to collection"
 }
