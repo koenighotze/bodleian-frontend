@@ -20,7 +20,7 @@ RUN npm ci
 COPY . .
 RUN npm run build
 
-FROM nginx:1.23.3-alpine
+FROM nginx:1.25.2-alpine
 
 ENV NGINX_PORT=8080
 COPY ./nginx.templates /etc/nginx/templates/
