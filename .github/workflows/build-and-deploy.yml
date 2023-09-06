@@ -60,7 +60,7 @@ jobs:
       - name: Lint CSS
         run: npm run lint-css
       - name: Check Dockerfile
-        uses: hadolint/hadolint-action@v3.0.0
+        uses: hadolint/hadolint-action@v3.1.0
         with:
           verbose: true
       - name: Check shell scripts
