@@ -20,7 +20,7 @@ jobs:
 
     steps:
       - name: Checking out
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Authenticating
         id: auth
         uses: google-github-actions/auth@v1
