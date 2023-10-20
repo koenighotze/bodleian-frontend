@@ -1,6 +1,6 @@
 /* Footer */
 footer.page-footer {
-  align-content: center;
+  place-content: center space-around;
   align-items: center;
 
   /* background: linear-gradient(45deg, #57baf8, #7758ff); */
@@ -9,7 +9,6 @@ footer.page-footer {
   display: flex;
   flex-flow: row nowrap;
   font-size: xx-small;
-  justify-content: space-around;
   position: sticky;
   width: 100%;
 }
