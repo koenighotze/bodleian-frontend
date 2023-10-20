@@ -1,4 +1,5 @@
 # syntax=docker/dockerfile:1
+# hadolint ignore=DL3007
 FROM cgr.dev/chainguard/node:latest AS build
 
 WORKDIR /app
