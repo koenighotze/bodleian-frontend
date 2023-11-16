@@ -33,7 +33,7 @@ jobs:
         id: containerizing
         run: ./scripts/containerize.sh
       - name: Scaning image
-        uses: aquasecurity/trivy-action@0.12.0
+        uses: aquasecurity/trivy-action@0.14.0
         with:
           image-ref: "${{ github.event.inputs.image-name || steps.containerizing.outputs.image-name }}"
           format: "table"
@@ -43,7 +43,7 @@ jobs:
           severity: "MEDIUM,HIGH,CRITICAL"
       - name: Deploying to Cloud Run
         id: deploy
-        uses: google-github-actions/deploy-cloudrun@v1.0.0
+        uses: google-github-actions/deploy-cloudrun@v1.0.2
         with:
           image: "${{ github.event.inputs.image-name || steps.containerizing.outputs.image-name }}"
           service: "bodleian-frontend"
