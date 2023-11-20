@@ -46,7 +46,7 @@
     "@testing-library/jest-dom": "^6.1.4",
     "@testing-library/react": "^13.4.0",
     "@testing-library/jest-dom": "^6.1.4",
-    "@testing-library/react": "^14.1.0",
+    "@testing-library/react": "^14.1.2",
     "@testing-library/user-event": "^14.4.3",
     "@vitejs/plugin-react": "^3.0.0",
     "babel-jest": "^29.3.1",
