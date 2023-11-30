@@ -29,3 +29,10 @@ $ npm run dev
 *   lint-fix: fix javascript lint errors
 *   test: run tests with coverage
 *   test-watch: run and watch tests
+
+
+## Bucket List
+
+*  [ ] https://playwright.dev/docs/intro Playwright
+*  [ ] vitest
+*  [ ] 
