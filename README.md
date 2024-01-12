@@ -30,9 +30,8 @@ $ npm run dev
 *   test: run tests with coverage
 *   test-watch: run and watch tests
 
-
 ## Bucket List
 
-*  [ ] https://playwright.dev/docs/intro Playwright
-*  [ ] vitest
-*  [ ] 
+*   \[ ] https://playwright.dev/docs/intro Playwright
+*   \[ ] vitest
+*   \[ ]
